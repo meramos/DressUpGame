@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+const PORT = process.env.PORT || 5000
 
 console.log("Phaser test server v1.0");
 
@@ -52,5 +53,4 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(8125);
-console.log('Server running at http://127.0.0.1:8125/');
+}).listen(PORT, () => console.log(`Listening on ${ PORT }`))
